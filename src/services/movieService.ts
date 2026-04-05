@@ -14,16 +14,13 @@ export const fetchMovies = async (
   const response = await axios.get<FetchMovieService>(
     "https://api.themoviedb.org/3/search/movie",
     {
-      params: {
-        query: movieName,
-        include_adult: false,
-        language: "en-US",
-        page,
-      },
-      headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
-      },
+params: {
+  api_key: "3a59e86b917cbfdc001466c7b20139c0",
+  query: movieName,
+  include_adult: false,
+  language: "en-US",
+  page,
+}
     },
   );
 
